@@ -72,14 +72,6 @@ public class GuiController {
 						_crackedMsgField.setText("");
 						_crackedString = null;
 					}
-					if(!newValue.matches("\\d*")) {
-						_msgLenghtField.setText(newValue.replaceAll("[^\\d]", ""));
-						return;
-					}
-					if(!newValue.isEmpty() && _msgField.getText().length() > Integer.parseInt(newValue)) {
-						_msgField.setText("");
-						return;
-					}
 			}
 		});
 		
@@ -91,10 +83,7 @@ public class GuiController {
 					_crackedMsgField.setText("");
 					_crackedString = null;
 				}
-				if (_msgField.getText().length() > Integer.parseInt(_msgLenghtField.getText())) {
-	                String s = _msgField.getText().substring(0, Integer.parseInt(_msgLenghtField.getText()));
-	                _msgField.setText(s);
-	            }
+				_msgLenghtField.setText(String.valueOf(_msgField.getText().length()));
 			}
 		});
 		
